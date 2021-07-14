@@ -43,8 +43,8 @@
   align-items: center;
 }
 
-.download-btn {
-  margin-top: 1rem;
+.download-btn,
+.clean-btn {
   padding: 0.8rem 1.7rem;
   border-radius: 5px;
   background-color: #f9637c;
@@ -53,7 +53,16 @@
   border: none;
 }
 
-.download-btn:hover {
+.download-btn {
+  margin-top: 1rem;
+}
+
+.clean-btn {
+  margin-left: 0.5rem;
+}
+
+.download-btn:hover,
+.clean-btn:hover {
   background-color: #ff2f52;
 }
 
@@ -61,4 +70,9 @@
   color: #ff2f52;
   font-size: 1.5rem;
   padding: 0.33rem 0.66rem;
+}
+
+.control-panel {
+  display: flex;
+  align-items: center;
 }

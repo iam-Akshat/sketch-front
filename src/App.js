@@ -1,5 +1,6 @@
 import './App.css';
 import Board from './components/Board';
+import ClearBoard from './components/ClearBoard';
 import ColorSelector from './components/ColorSelector';
 import FileDownloadButton from './components/FileDownloadButton';
 import WidthSelector from './components/WidthSelector';
@@ -11,9 +12,14 @@ function App() {
     <ControlsProvider>
       <BoardProvider>
         <div className="App">
-          <div>
-            <ColorSelector />
-            <WidthSelector />
+          <div className="control-panel">
+            <div className="right">
+              <ColorSelector />
+              <WidthSelector />
+            </div>
+            <div className="left">
+              <ClearBoard />
+            </div>
           </div>
 
           <Board />
