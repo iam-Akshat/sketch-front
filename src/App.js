@@ -11,8 +11,11 @@ function App() {
     <ControlsProvider>
       <BoardProvider>
         <div className="App">
-          <ColorSelector />
-          <WidthSelector />
+          <div>
+            <ColorSelector />
+            <WidthSelector />
+          </div>
+
           <Board />
           <FileDownloadButton />
         </div>

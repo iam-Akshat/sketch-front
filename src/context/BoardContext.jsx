@@ -1,28 +1,28 @@
-import React, { useContext, useRef, useState } from "react";
+import React, { useContext, useRef, useState } from 'react';
 
 const BoardContext = React.createContext();
 
 export const BoardProvider = ({ children }) => {
-  const [isDrawing, setIsDrawing] = useState(false)
+  const [isDrawing, setIsDrawing] = useState(false);
   const boardRef = useRef(null);
   const contextRef = useRef(null);
 
-  const prepareBoard = (width,height) => {
-    const board = boardRef.current
+  const prepareBoard = (width, height) => {
+    const board = boardRef.current;
     board.width = (width || window.innerWidth);
     board.height = (height || window.innerHeight);
     board.style.width = `${width || window.innerWidth}px`;
     board.style.height = `${height || window.innerHeight}px`;
-    board.style.border = '2px solid black'
+    board.style.border = '2px solid black';
 
-    const context = board.getContext("2d")
-    context.lineCap = "round";
+    const context = board.getContext('2d');
+    context.lineCap = 'round';
     context.strokeStyle = 'black';
     context.lineWidth = 5;
     contextRef.current = context;
   };
 
-  const startDrawing = ({ nativeEvent },color,width) => {
+  const startDrawing = ({ nativeEvent }, color, width) => {
     const { offsetX, offsetY } = nativeEvent;
     contextRef.current.beginPath();
     contextRef.current.strokeStyle = color;
@@ -47,13 +47,11 @@ export const BoardProvider = ({ children }) => {
 
   const clearBoard = () => {
     const board = boardRef.current;
-    const context = board.getContext("2d")
-    context.clearRect(0, 0, board.width, board.height)
-  }
+    const context = board.getContext('2d');
+    context.clearRect(0, 0, board.width, board.height);
+  };
 
-  const boardToImageUrl = () => {
-    return boardRef.current.toDataURL()
-  }
+  const boardToImageUrl = () => boardRef.current.toDataURL();
 
   return (
     <BoardContext.Provider
@@ -65,7 +63,7 @@ export const BoardProvider = ({ children }) => {
         finishDrawing,
         clearBoard,
         draw,
-        boardToImageUrl
+        boardToImageUrl,
       }}
     >
       {children}
