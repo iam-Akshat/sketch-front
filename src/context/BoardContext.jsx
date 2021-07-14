@@ -1,5 +1,4 @@
 import React, { useContext, useRef, useState } from "react";
-import { useControls } from "./ControlsContext";
 
 const BoardContext = React.createContext();
 
