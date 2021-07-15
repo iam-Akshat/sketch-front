@@ -11,20 +11,26 @@ function App() {
   return (
     <ControlsProvider>
       <BoardProvider>
-        <div className="App">
-          <div className="control-panel">
-            <div className="right">
-              <ColorSelector />
-              <WidthSelector />
-            </div>
-            <div className="left">
-              <ClearBoard />
-            </div>
+        <main className="main">
+          <div className="aside">
+            <h1>Sketcha PDF 🎨</h1>
           </div>
+          <div className="App">
+            <div className="control-panel">
+              <div className="right">
+                <ColorSelector />
+                <WidthSelector />
+              </div>
+              <div className="left">
+                <ClearBoard />
+              </div>
+            </div>
 
-          <Board />
-          <FileDownloadButton />
-        </div>
+            <Board />
+            <FileDownloadButton />
+          </div>
+        </main>
+
       </BoardProvider>
     </ControlsProvider>
   );
